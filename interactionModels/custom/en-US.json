@@ -1,0 +1,733 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "nurse amie",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AskSymptomLevelIntent",
+                    "slots": [
+                        {
+                            "name": "sleep",
+                            "type": "Symptom_Level",
+                            "samples": [
+                                "{sleep}"
+                            ]
+                        },
+                        {
+                            "name": "fatigue",
+                            "type": "Symptom_Level"
+                        },
+                        {
+                            "name": "distress",
+                            "type": "Symptom_Level"
+                        },
+                        {
+                            "name": "pain",
+                            "type": "Symptom_Level"
+                        },
+                        {
+                            "name": "steps",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "start intervention acticity",
+                        "intervention",
+                        "start intervention"
+                    ]
+                },
+                {
+                    "name": "ConfirmSymptomLevelIntent",
+                    "slots": [],
+                    "samples": []
+                },
+                {
+                    "name": "YesNoIntent",
+                    "slots": [
+                        {
+                            "name": "yes_no",
+                            "type": "YES_NO"
+                        }
+                    ],
+                    "samples": [
+                        "{yes_no}"
+                    ]
+                },
+                {
+                    "name": "ChangeGuidedActivityIntent",
+                    "slots": [
+                        {
+                            "name": "symptoms",
+                            "type": "Symptom",
+                            "samples": [
+                                "I want to change {symptoms} and {symptoms}",
+                                "I want to change {symptoms}",
+                                "I want to change {symptoms} {symptoms} and {symptoms}",
+                                "{symptoms} {symptoms}",
+                                "change {symptoms} and {symptoms}",
+                                "change {symptoms}",
+                                "{symptoms} and {symptoms}"
+                            ]
+                        },
+                        {
+                            "name": "sleep",
+                            "type": "Symptom_Level"
+                        },
+                        {
+                            "name": "fatigue",
+                            "type": "Symptom_Level"
+                        },
+                        {
+                            "name": "distress",
+                            "type": "Symptom_Level"
+                        },
+                        {
+                            "name": "pain",
+                            "type": "Symptom_Level"
+                        }
+                    ],
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.MoreIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateSettingsIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NextIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageUpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PreviousIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollRightIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollLeftIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollUpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "PlayIntroVideoIntent",
+                    "slots": [
+                        {
+                            "name": "yes_no",
+                            "type": "YES_NO"
+                        }
+                    ],
+                    "samples": []
+                },
+                {
+                    "name": "PinkRibbonIntent",
+                    "slots": [],
+                    "samples": [
+                        "select menu",
+                        "open menu",
+                        "menu",
+                        "pink ribbon",
+                        "open pink ribbon"
+                    ]
+                },
+                {
+                    "name": "MovementsIntent",
+                    "slots": [],
+                    "samples": [
+                        "movements",
+                        "open movments",
+                        "select movements"
+                    ]
+                },
+                {
+                    "name": "CopingSymptomsIntent",
+                    "slots": [],
+                    "samples": [
+                        "open coping symptoms",
+                        "select coping symptoms",
+                        "coping symptoms",
+                        "select coping with symptoms",
+                        "coping with symptoms",
+                        "open coping with symptoms"
+                    ]
+                },
+                {
+                    "name": "SoothingMusicIntent",
+                    "slots": [],
+                    "samples": [
+                        "soothing music",
+                        "select soothing music",
+                        "open soothing music"
+                    ]
+                },
+                {
+                    "name": "GuidedRelaxationIntent",
+                    "slots": [],
+                    "samples": [
+                        "guided relaxation",
+                        "select guided relaxation",
+                        "open guided relaxation"
+                    ]
+                },
+                {
+                    "name": "NutritionHomepageIntent",
+                    "slots": [],
+                    "samples": [
+                        "open nutrition menu",
+                        "open nutrition",
+                        "select nutrition",
+                        "nutrition"
+                    ]
+                },
+                {
+                    "name": "LoadFavouriteRecipeListIntent",
+                    "slots": [],
+                    "samples": [
+                        "open favourite recipe",
+                        "favourite recipe",
+                        "look up favourite recipes",
+                        "check out favourite recipes",
+                        "select favourite recipes",
+                        "favourite recipes",
+                        "open favourite recipes",
+                        "select favourite nutrition",
+                        "favourite nutrition",
+                        "open saved nutrition"
+                    ]
+                },
+                {
+                    "name": "BookmarkRecipeIntent",
+                    "slots": [],
+                    "samples": [
+                        "bookmark this recipe",
+                        "bookmark",
+                        "bookmark recipe"
+                    ]
+                },
+                {
+                    "name": "LaunchRecipeURLIntent",
+                    "slots": [],
+                    "samples": [
+                        "recipe detail",
+                        "select recipe details",
+                        "open recipe details",
+                        "open recipe detail"
+                    ]
+                },
+                {
+                    "name": "TopicOfDayMoreInfoIntent",
+                    "slots": [],
+                    "samples": [
+                        "open more info",
+                        "select more infor",
+                        "more info",
+                        "more information",
+                        "select more information",
+                        "open more information"
+                    ]
+                },
+                {
+                    "name": "OpenNewRecipeIntent",
+                    "slots": [],
+                    "samples": [
+                        "new recipe",
+                        "select new recipe",
+                        "open new recipe"
+                    ]
+                },
+                {
+                    "name": "LoadRecipeCategoryIntent",
+                    "slots": [],
+                    "samples": [
+                        "open recipe category",
+                        "select recipe category",
+                        "recipe category",
+                        "look up recipe category"
+                    ]
+                },
+                {
+                    "name": "LoadInterventionMediaIntent",
+                    "slots": [],
+                    "samples": [
+                        "select play audio",
+                        "select play video",
+                        "start video",
+                        "start audio",
+                        "play video",
+                        "play audio"
+                    ]
+                },
+                {
+                    "name": "PlayGetToFloorVideoIntent",
+                    "slots": [],
+                    "samples": [
+                        "start get to floor",
+                        "select get to floor",
+                        "get to floor",
+                        "play get to floor"
+                    ]
+                },
+                {
+                    "name": "GoodByeIntent",
+                    "slots": [],
+                    "samples": [
+                        "Good bye",
+                        "bye"
+                    ]
+                },
+                {
+                    "name": "HomeIntent",
+                    "slots": [],
+                    "samples": [
+                        "go to Nurse AMIE home screen",
+                        "go to Nurse AMIE home",
+                        "go to Nurse AMIE home page",
+                        "go to my home page",
+                        "go to the home screen",
+                        "go home"
+                    ]
+                },
+                {
+                    "name": "AskExerciseLevelIntent",
+                    "slots": [
+                        {
+                            "name": "exercise_level",
+                            "type": "Exercise_Feedback_Level"
+                        }
+                    ],
+                    "samples": [
+                        "{exercise_level}",
+                        "it's {exercise_level} "
+                    ]
+                },
+                {
+                    "name": "AskMetastasesLocationIntent",
+                    "slots": [
+                        {
+                            "name": "location",
+                            "type": "Metastases_Location"
+                        }
+                    ],
+                    "samples": [
+                        "{location}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "YES_NO",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "no",
+                                "synonyms": [
+                                    "no",
+                                    "not",
+                                    "nope",
+                                    "I don't think so",
+                                    "no, Im good",
+                                    "nah"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yes",
+                                "synonyms": [
+                                    "yes",
+                                    "fine",
+                                    "definitely",
+                                    "aye",
+                                    "all right",
+                                    "okay",
+                                    "true",
+                                    "yea",
+                                    "yup",
+                                    "of course",
+                                    "let's do it",
+                                    "sure",
+                                    "yeah"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Symptom_Level",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "high",
+                                "synonyms": [
+                                    "nine",
+                                    "eight",
+                                    "ten"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "medium",
+                                "synonyms": [
+                                    "seven",
+                                    "six",
+                                    "five",
+                                    "four"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "low",
+                                "synonyms": [
+                                    "zero",
+                                    "three",
+                                    "two",
+                                    "one"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Symptom",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "pain"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "distress"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fatigue"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sleep"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "History",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "month"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "three days"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "today"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Exercise_Feedback_Level",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "too easy",
+                                "synonyms": [
+                                    "easy"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "just right",
+                                "synonyms": [
+                                    "alright",
+                                    "ok",
+                                    "not bad"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "too hard",
+                                "synonyms": [
+                                    "hard"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Metastases_Location",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "lower body"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "upper body"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "torso",
+                                "synonyms": [
+                                    "torso and spine",
+                                    "spine"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "YesNoIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "yes_no",
+                            "type": "YES_NO",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "ChangeGuidedActivityIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "symptoms",
+                            "type": "Symptom",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.913517370771.95208662393"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AskSymptomLevelIntent",
+                    "delegationStrategy": "SKILL_RESPONSE",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "sleep",
+                            "type": "Symptom_Level",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1363255941066.932467369914"
+                            }
+                        },
+                        {
+                            "name": "fatigue",
+                            "type": "Symptom_Level",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "distress",
+                            "type": "Symptom_Level",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "pain",
+                            "type": "Symptom_Level",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "steps",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "AskExerciseLevelIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "exercise_level",
+                            "type": "Exercise_Feedback_Level",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "SKILL_RESPONSE"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1237353004038.355248856796",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "may i know your name?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1464865254929.1476538680510",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "what is why not?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1087367052384.645431449147",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Would you like to continue with Nurse AMIE?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.913517370771.95208662393",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "which symptoms you would like to change?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1408895495833.1006352795116",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "how would you rate your sleep?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1408895495833.1403639550722",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "how would you rate your fatigue?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1408895495833.407850504094",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "how would you rate your distress?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1408895495833.1287800261995",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "how would you rate your pain?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.383496037893.1151276841130",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Which history are you looking for. You can say today, past three days or past month."
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1363255941066.932467369914",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "how do you rate your sleep?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1298275659149.239183124961",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "You can say too hard, too esay, or just right."
+                    }
+                ]
+            }
+        ]
+    }
+}

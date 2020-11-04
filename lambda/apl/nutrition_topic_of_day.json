@@ -1,0 +1,185 @@
+{
+    "type": "APL",
+    "version": "1.3",
+    "settings": {},
+    "theme": "dark",
+    "import": [
+    {
+      "name": "alexa-viewport-profiles",
+      "version": "1.1.0"
+    },
+    {
+      "name": "alexa-layouts",
+      "version": "1.1.0"
+    },
+    {
+      "name": "alexa-styles",
+      "version": "1.1.0"
+    }
+        ],
+    "resources": [],
+    "styles": {
+        "karaokeStyle": {
+          "extends": "textStyleKaraoke",
+          "values": [
+            {
+              "color": "@colorText"
+            },
+            {
+              "when": "${state.karaoke}",
+              "color": "white"
+            },
+            {
+              "when": "${state.karaokeTarget}",
+              "color": "rgba(255,90,96,1)"
+            }
+          ]
+        }
+    },
+    "onMount": [
+        {
+            "type": "Sequential",
+            "commands": [
+                {
+                    "type": "AnimateItem",
+                    "easing": "ease-in-out",
+                    "componentId": "APL_Page",
+                    "duration":1000,
+                      "value": [
+                      {
+                          "property": "opacity",
+                          "to": 1
+                      }
+                      ]
+                },
+                {
+                    "type": "Idle",
+                    "delay": 3000
+                },
+                {
+                    "type": "SpeakItem",
+                    "componentId": "topic_of_day",
+                    "highlightMode": "line",
+                    "align": "first"
+                },
+                {
+                    "type": "Idle",
+                    "delay": 1000000
+                }           
+            ]
+        }
+    ],
+    "graphics": {},
+    "commands": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload",
+            "LambdaData"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "direction": "column",
+                "width": "100vw",
+                "id": "APL_Page",
+                "opacity":0,
+                "height": "100vh",
+                "items": [
+                            {
+                                "type": "Image",
+                                "source": "https://apldmo.s3.amazonaws.com/raw_background.jpg",
+                                "scale": "best-fill",
+                                "width": "100vw",
+                                "position": "absolute",
+                                "height": "100vh"
+                            },
+                            {
+                                "type": "Container",
+                                "width": "80vw",
+                                "left": "10vw",
+                                "height": "20vh",
+                                "position": "absolute",
+                                "items": [
+                                    {
+                                        "type": "Text",
+                                        "text": "<b> ${LambdaData.properties.title}</b>",
+                                        "fontWeight": "15",
+                                        "fontSize": "50",
+                                        "top": "50",
+                                        "textAlign": "center"
+                                    },
+                                    {
+                                        "type": "Text",
+                                        "text": "<b> ${LambdaData.properties.subtitle}</b>",
+                                        "fontWeight": "15",
+                                        "fontSize": "50",
+                                        "top": "70",
+                                        "textAlign": "center"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Container",
+                                "id": "back_button",
+                                "width": "13vw",
+                                "height": "20vh",
+                                "top": "2vh",
+                                "position": "absolute",
+                                "items": [
+                                            {
+                                            "type": "TouchWrapper",
+                                            "id": "back_button",
+                                            "width": "15vw",
+                                            "height": "30vh",
+                                            "onPress": [
+                                                {
+                                                    "type": "SendEvent",
+                                                    "arguments": [
+                                                        "apl_back"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    
+                                    ]
+                                
+                            },
+                            {
+                                "type": "Container",
+                                "width": "80vw",
+                                "height": "70vh",
+                                "top": "25vh",
+                                "left": "10vw",
+                                "position": "absolute",
+                                "items": [
+                                    {
+                                        "type": "ScrollView",
+                                        "height": "70vh",
+                                        "shrink": 1,
+                                        "item": [
+                                            {
+                                                "type": "Container",
+                                                "items": [
+                                                    {
+                                                        "type": "Text",
+                                                        "id": "topic_of_day",
+                                                        "style": "karaokeStyle",
+                                                        "text": "${LambdaData.properties.text}",
+                                                        "speech": "${LambdaData.properties.text_speech}",
+                                                        "paddingTop": 40,
+                                                        "fontSize": "6vh",
+                                                        "fontWeight": "300"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                        ]
+                            }
+                ]
+
+            }
+        ]
+    }
+}

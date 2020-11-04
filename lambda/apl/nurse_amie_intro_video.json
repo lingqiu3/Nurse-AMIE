@@ -1,0 +1,127 @@
+
+{
+    "type": "APL",
+    "version": "1.1",
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.1.0"
+        }
+    ],
+    "onMount": [
+        {
+            "type": "AnimateItem",
+            "easing": "ease-in-out",
+            "componentId": "APL_Page",
+            "duration":700,
+              "value": [
+              {
+                  "property": "opacity",
+                  "to": 1
+              }
+              ]
+          }
+    ],
+    "styles": {
+        "textStylePrimary": {
+            "values": {
+                "fontSize": 72
+            }
+        },
+        "textStyleSecondary": {
+            "values": {
+                "fontSize": 60,
+                "textAlign": "center"
+            }
+        },
+        "textStyleTertiary": {
+            "values": {
+                "fontSize": 36,
+                "textAlign": "center"
+            }
+        }
+    },
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100%",
+                "height": "100%",
+                "alignItems": "center",
+                "justifyContent": "start",
+                "opacity": 0,
+                "id": "APL_Page",
+                "items": [
+                    {
+                        "type": "Frame",
+                        "backgroundColor": "rgba(0, 0, 0, 0.5)",
+                        "width": "100%",
+                        "height": "100%",
+                        "position": "absolute"
+                    },
+                    {
+                        "type": "Container",
+                        "width": "100%",
+                        "height": "100%",
+                        "alignItems": "center",
+                        "justifyContent": "end",
+                        "items": [
+                            {
+                                "type": "Video",
+                                "id": "VideoPlayer",
+                                "autoplay": false,
+                                "width": "100%",
+                                "height": "100%",
+                                "scale": "best-fit",
+                                "source": "https://nurse-amie.s3.us-east-2.amazonaws.com/introduction/DrMichaelHayes+and+Nurse+AMIE+Introduction.mp4",
+                                "position": "absolute",
+                                "onPause": [
+                                    {
+                                        "type": "SetState",
+                                        "componentId": "alexaPlayPauseToggleButton",
+                                        "state": "checked",
+                                        "value": true
+                                    }
+                                ],
+                                "onPlay": [
+                                    {
+                                        "type": "SetState",
+                                        "componentId": "alexaPlayPauseToggleButton",
+                                        "state": "checked",
+                                        "value": false
+                                    }
+                                ],
+                                "onEnd": [
+                                    {
+                                        "type": "SetState",
+                                        "componentId": "alexaPlayPauseToggleButton",
+                                        "state": "checked",
+                                        "value": true
+                                    },
+                                    {
+                                        "type": "SendEvent",
+                                        "arguments": [
+                                            "intro_video_end"
+                                        ]
+
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "AlexaTransportControls",
+                                "right": "70%",
+                                "secondaryControls": "none",
+                                "autoplay": false,
+                                "mediaComponentId": "VideoPlayer"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,348 @@
+{
+    "type": "APL",
+    "version": "1.3",
+    "settings": {},
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.1.0"
+        }
+    ],
+    "resources": [
+        {
+            "colors": {
+                "Background": "#F79AC0",
+                "myBlue": "#66DFFF"
+            }
+        }
+    ],
+    "styles": {},
+    "onMount": [
+        {
+          "type": "AnimateItem",
+          "easing": "ease-in-out",
+          "componentId": "APL_Page",
+          "duration":1000,
+            "value": [
+            {
+                "property": "opacity",
+                "to": 1
+            }
+            ]
+        }
+        ],
+    "graphics": {},
+    "commands": {},
+    "layouts": {
+        "SelectionTab":{
+            "parameters": [
+                "primaryText",
+                "arguments"
+            ],
+            "items":[
+                        {
+                          "type": "Frame",
+                          "borderRadius": 25,
+                          "width": "80vw",
+                          "height": "15vh",
+                          "top": "25vh",
+                          "left": "7vw",
+                          "position": "absolute",
+                          "backgroundColor": "rgba(29,192,177,100%)",
+                          "item": {
+                                "type": "TouchWrapper",
+                                "items":[{
+                                    "type": "Text",
+                                    "text": "${primaryText}",
+                                    "width": "80vw",
+                                    "height": "15vh",
+                                    "left": "20vw",
+                                    "fontSize": "40",
+                                    "textAlign": "center",
+                                    "textAlignVertical": "center"
+                                }],
+                                "onPress": [
+                                    {
+                                        "type": "SendEvent",
+                                        "arguments": "${arguments}"
+                                    }
+                                ]
+                          }
+                    }
+                ]
+        }
+    },
+    "mainTemplate": {
+        "items": [
+            {
+                "type": "Container",
+                "id": "APL_Page",
+                "opacity": 0,
+                "items": [
+                    {
+                         "type": "Image",
+                         "source": "https://apldmo.s3.amazonaws.com/raw_background.jpg",
+                         "scale": "best-fill",
+                         "width": "100vw",
+                         "height": "100vh"
+                         
+                    },
+                    {
+                        "type": "Image",
+                        "source": "https://nurse-amie.s3.us-east-2.amazonaws.com/Nurse_AMIE_Skill/back-button-icon-11.jpg",
+                        "position": "absolute",
+                        "scale": "best-fill",
+                        "top": "4.5vh",
+                        "left": "2vw",
+                        "width": "8.5vw",
+                        "height": "14vh"
+                   },
+                   {
+                       "type": "Container",
+                       "id": "pink_ribbon_con",
+                       "width": "10vw",
+                       "height": "15vh",
+                       "left": "1.5vw",
+                       "top": "3.2vh",
+                       "position": "absolute",
+                       "items": [
+                                   {
+                                   "type": "TouchWrapper",
+                                   "id": "pink_ribbon",
+                                   "width": "15vw",
+                                   "height": "30vh",
+                                   "onPress": [
+                                       {
+                                           "type": "SendEvent",
+                                           "arguments": [
+                                               "apl_back"
+                                           ]
+                                       }
+                                   ]
+                               }
+                           
+                           ]
+                       
+                    },
+                    {
+                        "type": "Container",
+                        "width": "100vw",
+                        "height": "20vh",
+                        "position": "absolute",
+                        "items": [
+                            {
+                                "type": "Text",
+                                "text": "<b> COPING WITH SYMPTOMS </b>",
+                                "fontWeight": "20",
+                                "fontSize": "60",
+                                "top": "50",
+                                "textAlign": "center"
+                            }
+                        ]
+                    },
+                    {
+                      "type": "ScrollView",
+                        "height": "70vh",
+                        "top": "23vh",
+                        "width": "80vw",
+                        "left": "10vw",
+                        "position": "absolute",
+                      "item": [
+                        {
+                        "type": "Sequence",
+                        "height": "70vh",
+                        "top": "23vh",
+                        "width": "80vw",
+                        "left": "10vw",
+                        "shrink": 1,
+                        "position": "absolute",
+                        "item": [
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Palliative Care: YOU are a BRIDGE",
+                            "arguments": ["selected_activity","palliative_care", "0"]
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Palliative Care: Introduction",
+                            "arguments": ["selected_activity","palliative_care", "1"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Palliative Care: Pain and Neuropathy",
+                            "arguments": ["selected_activity","palliative_care", "2"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Palliative Care: Wellness",
+                            "arguments": ["selected_activity","palliative_care", "3"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Dr. Michael Hayes & Nurse AMIE Introduction",
+                            "arguments": ["selected_activity","hayes", "0"],
+                            "spacing": "3vw"
+                            }, 
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Intro to Dialectical Behavioral Therapy (DBT)",
+                            "arguments": ["selected_activity","hayes", "1"],
+                            "spacing": "3vw"
+                            }, 
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Introduction to DBT Part 2",
+                            "arguments": ["selected_activity","hayes", "2"],
+                            "spacing": "3vw"
+                            }, 
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "DBT Wise Mind",
+                            "arguments": ["selected_activity","hayes", "3"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "DBT Interpersonal Effectiveness Skills",
+                            "arguments": ["selected_activity","hayes", "4"],
+                            "spacing": "3vw"
+                            }, 
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "DBT Emotion Regulation",
+                            "arguments": ["selected_activity","hayes", "5"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "DBT Radical Acceptance Skills",
+                            "arguments": ["selected_activity","hayes", "6"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Understanding Anxiety",
+                            "arguments": ["selected_activity","hayes", "7"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Anxiety Part 2",
+                            "arguments": ["selected_activity","hayes", "8"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Anxiety Part 3",
+                            "arguments": ["selected_activity","hayes", "9"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Understanding Depression",
+                            "arguments": ["selected_activity","hayes", "10"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Toolbox",
+                            "arguments": ["selected_activity","hayes", "11"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Imagining Future Dissolved",
+                            "arguments": ["selected_activity","zucker", "0"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "100 Trillion Healthy Cells",
+                            "arguments": ["selected_activity","zucker", "1"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Therapy Related Fatigue",
+                            "arguments": ["selected_activity","zucker", "2"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Don't Fall Through the Ice",
+                            "arguments": ["selected_activity","zucker", "3"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Managing Fatigue",
+                            "arguments": ["selected_activity","zucker", "4"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Many Fitness Levels, One You",
+                            "arguments": ["selected_activity","zucker", "5"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Too Much of a Good Thing is a Bad Thing",
+                            "arguments": ["selected_activity","zucker", "6"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Check the Tires Before the Road Trip",
+                            "arguments": ["selected_activity","zucker", "7"],
+                            "spacing": "3vw"
+                            },
+                            {
+                            "type": "SelectionTab",
+                            "left": "50vw",
+                            "primaryText": "Metabolic Stewardship",
+                            "arguments": ["selected_activity","zucker", "8"],
+                            "spacing": "3vw"
+                            }
+                        ]
+                    }
+
+                        ]
+                    }
+                ]
+            }
+        ],
+        "parameters": [
+            "payload",
+            "LambdaData"
+        ]
+    }
+}

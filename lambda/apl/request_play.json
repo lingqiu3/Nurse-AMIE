@@ -1,0 +1,132 @@
+{
+    "type": "APL",
+    "version": "1.3",
+    "settings": {},
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.1.0"
+        }
+    ],
+    "resources": [
+        {
+            "colors": {
+                "Background": "#F79AC0",
+                "myBlue": "#66DFFF"
+            }
+        }
+    ],
+    "styles": {},
+    "onMount": [
+        {
+            "type": "AnimateItem",
+            "easing": "ease-in-out",
+            "componentId": "APL_Page",
+            "duration": 700,
+            "value": [
+                {
+                    "property": "opacity",
+                    "to": 1
+                }
+            ]
+        }
+    ],
+    "graphics": {},
+    "commands": {},
+    "layouts": {},
+    "mainTemplate": {
+        "items": [
+            {
+                "type": "Container",
+                "id": "APL_Page",
+                "opacity":0,
+                "items": [
+                    {
+                        "type": "Image",
+                        "source": "https://apldmo.s3.amazonaws.com/raw_background.jpg",
+                        "scale": "best-fill",
+                        "width": "100vw",
+                        "height": "100vh"
+                    },
+                    {
+                        "type": "Container",
+                        "width": "100vw",
+                        "height": "100vh",
+                        "position": "absolute",
+                        "items": [
+                            {
+                                "type": "Container",
+                                "width": "30vw",
+                                "height": "20vh",
+                                "top": "30vh",
+                                "left": "35vw",
+                                "items": [
+                                    {
+                                        "type": "AlexaButton",
+                                        "width": "300dp",
+                                        "height": "100dp",
+                                        "top": "30dp",
+                                        "buttonText": "<b>Start</b>",
+                                        "buttonStyle": "contained",
+                                        "id": "AlexaButton",
+                                        "alignSelf": "center",
+                                        "primaryAction": {
+                                            "type": "SendEvent",
+                                            "arguments": [
+                                                "start_intervention"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Container",
+                                "width": "30vw",
+                                "height": "20vh",
+                                "top": "30vh",
+                                "left": "35vw",
+                                "items": [
+                                    {
+                                        "type": "AlexaButton",
+                                        "width": "300dp",
+                                        "height": "100dp",
+                                        "top": "25dp",
+                                        "buttonText": "<b>Stop</b>",
+                                        "buttonStyle": "contained",
+                                        "id": "AlexaButton",
+                                        "alignSelf": "center",
+                                        "primaryAction": {
+                                            "type": "SendEvent",
+                                            "arguments": [
+                                                "exit_intervention"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Container",
+                                "top": "80vh",
+                                "left": "5vw",
+                                "width": "100vw",
+                                "height": "60vh",
+                                "position": "absolute",
+                                "items": [
+                                              {
+                                    "type": "AlexaFooter",
+                                    "hintText": "Say, \" Alexa, start\", to start today's intervention activity!"
+                                            }
+                                        ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "parameters": [
+            "payload",
+            "LambdaData"
+        ]
+    }
+}

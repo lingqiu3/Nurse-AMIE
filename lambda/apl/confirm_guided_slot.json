@@ -1,0 +1,220 @@
+{
+    "type": "APL",
+    "version": "1.3",
+    "settings": {},
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.0.0"
+        }
+        
+        ],
+    "resources": [
+        {
+            "colors": {
+                "Background": "#F79AC0",
+                "myBlue": "#66DFFF"
+            }
+        }
+    ],
+    "styles": {},
+    "onMount": [
+        {
+          "type": "AnimateItem",
+          "easing": "ease-in-out",
+          "componentId": "APL_Page",
+          "duration":700,
+            "value": [
+            {
+                "property": "opacity",
+                "to": 1
+            }
+            ]
+        }
+        ],
+    "graphics": {},
+    "commands": {},
+    "layouts": {},
+    "mainTemplate": {
+        "items": [
+            {
+                "type": "Container",
+                "id": "APL_Page",
+                "opacity":0,
+                "items": [
+                    {
+                         "type": "Image",
+                         "source": "https://apldmo.s3.amazonaws.com/raw_background.jpg",
+                         "scale": "best-fill",
+                         "width": "100vw",
+                         "height": "100vh"
+                         
+                    },
+                    {
+                        "type": "Container",
+                        "top": "0vh",
+                        "left": "0vw",
+                        "width": "100vw",
+                        "height": "20vh",
+                        "position": "absolute",
+                        "items": [
+
+                            {
+                                "type": "Text",
+                                "text": "<b> Today's Health Condition</b> ",
+                                "fontWeight": "20",
+                                "fontSize": "70",
+                                "top": "70",
+                                "paddingLeft":"80",
+                                "textAlign": "left",
+                                "spacing": "30"
+                            }
+                        ]
+                    }, 
+                    {
+                        "type": "Container",
+                        "top": "20vh",
+                        "left": "0vw",
+                        "width": "40vw",
+                        "height": "65vh",
+                        "position": "absolute",
+                        "items": [
+                            {
+                                "type": "Text",
+                                "text": "<b> Sleep</b>",
+                                "fontWeight": "20",
+                                "fontSize": "55",
+                                "top": "40",
+                                "paddingLeft":"200",
+                                "textAlign": "left",
+                                "spacing": "30"
+                            }, 
+                            {
+                                "type": "Text",
+                                "text": "<b> Fatigue</b>",
+                                "fontWeight": "20",
+                                "fontSize": "55",
+                                "top": "40",
+                                "paddingLeft":"200",
+                                "textAlign": "left",
+                                "spacing": "30"
+                            }, 
+                            {
+                                "type": "Text",
+                                "text": "<b> Distress</b>",
+                                "fontWeight": "20",
+                                "fontSize": "55",
+                                "top": "40",
+                                "paddingLeft":"200",
+                                "textAlign": "left",
+                                "spacing": "30"
+                            }, 
+                            {
+                                "type": "Text",
+                                "text": "<b> Pain </b>",
+                                "fontWeight": "20",
+                                "fontSize": "55",
+                                "top": "40",
+                                "paddingLeft":"200",
+                                "textAlign": "left",
+                                "spacing": "30"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "<b> Steps </b>",
+                                "fontWeight": "20",
+                                "fontSize": "55",
+                                "top": "40",
+                                "paddingLeft":"200",
+                                "textAlign": "left",
+                                "spacing": "30"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Container",
+                        "top": "20vh",
+                        "left": "30vw",
+                        "width": "40vw",
+                        "height": "65vh",
+                        "position": "absolute",
+                        "items": [
+                            {
+                                "type": "Text",
+                                "text": "<b> ${LambdaData.sleep}</b>",
+                                "fontWeight": "20",
+                                "fontSize": "55",
+                                "top": "40",
+                                "paddingLeft":"200",
+                                "textAlign": "left",
+                                "spacing": "30"
+                            }, 
+                            {
+                                "type": "Text",
+                                "text": "<b> ${LambdaData.fatigue}</b>",
+                                "fontWeight": "20",
+                                "fontSize": "55",
+                                "top": "40",
+                                "paddingLeft":"200",
+                                "textAlign": "left",
+                                "spacing": "30"
+                            }, 
+                            {
+                                "type": "Text",
+                                "text": "<b> ${LambdaData.distress}</b>",
+                                "fontWeight": "20",
+                                "fontSize": "55",
+                                "top": "40",
+                                "paddingLeft":"200",
+                                "textAlign": "left",
+                                "spacing": "30"
+                            }, 
+                            {
+                                "type": "Text",
+                                "text": "<b> ${LambdaData.pain}</b>",
+                                "fontWeight": "20",
+                                "fontSize": "55",
+                                "top": "40",
+                                "paddingLeft":"200",
+                                "textAlign": "left",
+                                "spacing": "30"
+                            }, 
+                            {
+                                "type": "Text",
+                                "text": "<b> ${LambdaData.steps}</b>",
+                                "fontWeight": "20",
+                                "fontSize": "55",
+                                "top": "40",
+                                "paddingLeft":"200",
+                                "textAlign": "left",
+                                "spacing": "30"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Container",
+                        "top": "85vh",
+                        "left": "5vw",
+                        "width": "100vw",
+                        "height": "60vh",
+                        "position": "absolute",
+                        "items": [
+                                      {
+            "type": "AlexaFooter",
+            "hintText": "Say, \"YES\", to explore today's recommended activity!"
+          }
+                        ]
+                    }
+                            
+                    
+                        
+                ]
+            }
+        ],
+        "parameters": [
+            "payload",
+            "LambdaData"
+        ]
+    }
+}
